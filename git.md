@@ -60,6 +60,7 @@ git commit -m "3stst"       / commit 으로 메모
 git push -u origin main     / origin 으로 main branch 에 push(업로드)
 ```
 
+<<<<<<< HEAD:git.md
 
 
 clone (원격 저장소 복제 하기)
@@ -80,3 +81,6 @@ Git Login Token 발급 방법
 ===
 
 우상단 Account - Settings - Developer settings - Personal access tokens
+=======
+sdfdsafds
+>>>>>>> c10ed3695a3bce04a24cc38f46d153693ee3e7b3:git.txt
