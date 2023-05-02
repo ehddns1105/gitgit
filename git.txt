@@ -38,3 +38,7 @@ git pull origin (branchname/main) --allow-unrelated-histories
 '_________________
 
 git push -u origin main     / git push (업로드)
+
+
+
+aaaaaaaaaaaaa
