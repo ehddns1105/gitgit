@@ -82,3 +82,36 @@ Git Login Token 발급 방법
 
 우상단 Account - Settings - Developer settings - Personal access tokens
 =======
+
+
+Git Branch
+===
+```
+* merge : 변경 내용의 이력이 모두 그대로 남아 있기 때문에 이력이 복잡해짐
+* rebase : 이력은 단순해지지만, 원래의 커밋 이력이 변경됨. 정확한 이력을 남겨야 할 필요가 있을 경우에는 사용 X
+```
+
+branch 사용법
+---
+```
+git branch <branchname>     : branch 생성
+ex) git branch branchtest
+
+git branch                  : branch 확인
+
+git checkout <branchname>   : 사용 할 branch 변경
+
+git merge <branchname>      : 브랜치 병합하기
+git branch -d <branchname>  : 브랜치 삭제 (-d 옵션)
+
+```
+
+
+```
+Note
+checkout 명령에 -b 옵션을 넣으면 브랜치 작성과 체크아웃을 한꺼번에 실행할 수 있습니다.
+$ git checkout -b <branch>
+```
+
+
+test2추가
