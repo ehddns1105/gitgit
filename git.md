@@ -48,4 +48,11 @@ git add (파일 명)           / 파일 추가
 git commit -m "3stst"       / commit 으로 메모
 git push -u origin main     / origin 으로 main branch 에 push(업로드)
 
-sdfdsafds
+
+
+
+git pull <repository> <refspec>
+git pull origin main
+
+
+
