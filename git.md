@@ -82,5 +82,3 @@ Git Login Token 발급 방법
 
 우상단 Account - Settings - Developer settings - Personal access tokens
 =======
-sdfdsafds
->>>>>>> c10ed3695a3bce04a24cc38f46d153693ee3e7b3:git.txt
