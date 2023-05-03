@@ -115,6 +115,3 @@ $ git checkout -b <branch>
 
 
 test2추가
-=======
-test2추가22222
->>>>>>> test2
