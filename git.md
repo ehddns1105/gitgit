@@ -113,6 +113,3 @@ checkout 명령에 -b 옵션을 넣으면 브랜치 작성과 체크아웃을 �
 $ git checkout -b <branch>
 ```
 
-
-aaaaa
-
