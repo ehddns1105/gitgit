@@ -24,6 +24,9 @@ git remote add origin https://github.com/ehddns1105/gitgit.git   / 원격 저장
 
 git remote -v / 원격 저장소 확인
 git remote remove origin   / 원격 저장소 삭제
+
+
+git grep        : 저장소의 파일 내용에서 검색하고 자 할때 사용 하는 명령어, 특정 단어가 포함된 파일을 검색 할 수 있음
 ```
 
 
