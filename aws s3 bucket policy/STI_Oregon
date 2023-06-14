@@ -1,0 +1,110 @@
+{
+    "Version": "2012-10-17",
+    "Id": "S3-Console-Auto-Gen-Policy-1684218563517",
+    "Statement": [
+        {
+            "Sid": "S3PolicyStmt-DO-NOT-MODIFY-1684218563304",
+            "Effect": "Allow",
+            "Principal": {
+                "Service": "logging.s3.amazonaws.com"
+            },
+            "Action": "s3:PutObject",
+            "Resource": "arn:aws:s3:::s3-accesslog-region-oregon/*"
+        },
+        {
+            "Sid": "Sample_STMT_Change_Me",
+            "Effect": "Deny",
+            "Principal": "*",
+            "Action": [
+                "s3:ListBucket",
+                "s3:GetObject"
+            ],
+            "Resource": [
+                "arn:aws:s3:::s3-accesslog-region-oregon/*",
+                "arn:aws:s3:::s3-accesslog-region-oregon"
+            ],
+            "Condition": {
+                "StringNotEqualsIfExists": {
+                    "aws:PrincipalAccount": "797873946194",
+                    "aws:PrincipalServiceName": [
+                        "cloudtrail.amazonaws.com",
+                        "config.amazonaws.com"
+                    ]
+                },
+                "NotIpAddress": {
+                    "aws:SourceIp": [
+                        "211.115.223.215/32",
+                        "203.244.218.40/32",
+                        "210.94.41.89/32",
+                        "203.244.218.41/32",
+                        "34.213.114.234/32",
+                        "2.37.161.83/32"
+                    ]
+                },
+                "StringNotEquals": {
+                    "aws:SourceVpce": "vpce-0385854c5e7e6a384"
+                }
+            }
+        }
+    ]
+}
+
+
+
+
+
+
+
+{
+    "Version": "2012-10-17",
+    "Id": "S3-Console-Auto-Gen-Policy-1684205908316",
+    "Statement": [
+        {
+            "Sid": "S3PolicyStmt-DO-NOT-MODIFY-1684205908147",
+            "Effect": "Allow",
+            "Principal": {
+                "Service": "logging.s3.amazonaws.com"
+            },
+            "Action": "s3:PutObject",
+            "Resource": "arn:aws:s3:::s3-accesslog-region-seoul/*"
+        },
+        {
+            "Sid": "Sample_STMT_Change_Me",
+            "Effect": "Deny",
+            "Principal": "*",
+            "Action": [
+                "s3:ListBucket",
+                "s3:GetObject"
+            ],
+            "Resource": [
+                "arn:aws:s3:::s3-accesslog-region-seoul/*",
+                "arn:aws:s3:::s3-accesslog-region-seoul"
+            ],
+            "Condition": {
+                "StringNotEqualsIfExists": {
+                    "aws:PrincipalAccount": "600734575887",
+                    "aws:PrincipalServiceName": [
+                        "cloudtrail.amazonaws.com",
+                        "config.amazonaws.com"
+                    ]
+                },
+                "NotIpAddress": {
+                    "aws:SourceIp": [
+                        "211.115.223.215/32",
+                        "203.244.218.40/32",
+                        "210.94.41.89/32",
+                        "203.244.218.41/32",
+                        "13.125.91.245",
+                        "54.180.18.234",
+                        "13.125.16.105",
+                        "15.165.95.247"
+                    ]
+                },
+                "StringNotEquals": {
+                    "aws:SourceVpce": "vpce-00368d585d965ba40"
+                }
+            }
+        }
+
+    ]
+}

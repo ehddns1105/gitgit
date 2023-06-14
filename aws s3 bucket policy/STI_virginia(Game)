@@ -1,0 +1,72 @@
+#### 기존
+
+{
+    "Version": "2012-10-17",
+    "Id": "S3-Console-Auto-Gen-Policy-1684217058379",
+    "Statement": [
+        {
+            "Sid": "S3PolicyStmt-DO-NOT-MODIFY-1684217058038",
+            "Effect": "Allow",
+            "Principal": {
+                "Service": "logging.s3.amazonaws.com"
+            },
+            "Action": "s3:PutObject",
+            "Resource": "arn:aws:s3:::s3-accesslog-region-virginia/*"
+        }
+    ]
+}
+
+
+
+STI 적용
+
+{
+    "Version": "2012-10-17",
+    "Id": "S3-Console-Auto-Gen-Policy-1684217058379",
+    "Statement": [
+        {
+            "Sid": "S3PolicyStmt-DO-NOT-MODIFY-1684217058038",
+            "Effect": "Allow",
+            "Principal": {
+                "Service": "logging.s3.amazonaws.com"
+            },
+            "Action": "s3:PutObject",
+            "Resource": "arn:aws:s3:::s3-accesslog-region-virginia/*"
+        },
+        {
+            "Sid": "Sample_STMT_Change_Me",
+            "Effect": "Deny",
+            "Principal": "*",
+            "Action": [
+                "s3:ListBucket",
+                "s3:GetObject"
+            ],
+            "Resource": [
+                "arn:aws:s3:::s3-accesslog-region-virginia/*",
+                "arn:aws:s3:::s3-accesslog-region-virginia"
+            ],
+            "Condition": {
+                "StringNotEqualsIfExists": {
+                    "aws:PrincipalAccount": "127311923021",
+                    "aws:PrincipalServiceName": [
+                        "cloudtrail.amazonaws.com",
+                        "config.amazonaws.com"
+                    ]
+                },
+                "NotIpAddress": {
+                    "aws:SourceIp": [
+                        "211.115.223.215/32",
+                        "203.244.218.40/32",
+                        "210.94.41.89/32",
+                        "203.244.218.41/32",
+                        "34.225.250.172/32",
+                        "3.234.22.225/32"
+                    ]
+                },
+                "StringNotEquals": {
+                    "aws:SourceVpce": "vpce-06c09a504601ef4b7"
+                }
+            }
+        }
+    ]
+}

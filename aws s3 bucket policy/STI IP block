@@ -1,0 +1,55 @@
+{
+    "Version": "2012-10-17",
+    "Id": "S3-Console-Auto-Gen-Policy-1672301184819",
+    "Statement": [
+        {
+            "Sid": "S3PolicyStmt-DO-NOT-MODIFY-1672301184731",
+            "Effect": "Allow",
+            "Principal": {
+                "Service": "logging.s3.amazonaws.com"
+            },
+            "Action": [
+                "s3:PutObject",
+                "s3:PutObjectAcl"
+            ],
+            "Resource": "arn:aws:s3:::aws-s3access-logs-for-sti-ap-northeast-2-153697653691/*"
+        },
+        {
+            "Sid": "Sample_STMT_Change_Me",
+            "Effect": "Deny",
+            "Principal": "*",
+            "Action": [
+                "s3:ListBucket",
+                "s3:GetObject"
+            ],
+            "Resource": [
+                "arn:aws:s3:::aws-s3access-logs-for-sti-ap-northeast-2-153697653691/*",
+                "arn:aws:s3:::aws-s3access-logs-for-sti-ap-northeast-2-153697653691"
+            ],
+            "Condition": {
+                "StringNotEqualsIfExists": {
+                    "aws:PrincipalAccount": "600734575887",
+                    "aws:PrincipalServiceName": [
+                        "cloudtrail.amazonaws.com",
+                        "config.amazonaws.com"
+                    ]
+                },
+                "NotIpAddress": {
+                    "aws:SourceIp": [
+                        "211.115.223.215/32",
+                        "203.244.218.40/32",
+                        "210.94.41.89/32",
+                        "203.244.218.41/32",
+                        "13.125.91.245",
+                        "54.180.18.234",
+                        "13.125.16.105",
+                        "15.165.95.247"
+                    ]
+                },
+                "StringNotEquals": {
+                    "aws:SourceVpce": "vpce-00368d585d965ba40"
+                }
+            }
+        }
+    ]
+}

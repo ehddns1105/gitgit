@@ -1,0 +1,74 @@
+#### 기본
+{
+    "Version": "2012-10-17",
+    "Id": "S3-Console-Auto-Gen-Policy-1684212547571",
+    "Statement": [
+        {
+            "Sid": "S3PolicyStmt-DO-NOT-MODIFY-1684212547256",
+            "Effect": "Allow",
+            "Principal": {
+                "Service": "logging.s3.amazonaws.com"
+            },
+            "Action": "s3:PutObject",
+            "Resource": "arn:aws:s3:::s3-accesslog-region-frankfurt/*"
+        }
+    ]
+}
+
+STI
+
+
+
+{
+    "Version": "2012-10-17",
+    "Id": "S3-Console-Auto-Gen-Policy-1684212547571",
+    "Statement": [
+        {
+            "Sid": "S3PolicyStmt-DO-NOT-MODIFY-1684212547256",
+            "Effect": "Allow",
+            "Principal": {
+                "Service": "logging.s3.amazonaws.com"
+            },
+            "Action": "s3:PutObject",
+            "Resource": "arn:aws:s3:::s3-accesslog-region-frankfurt/*"
+        },
+        {
+            "Sid": "Sample_STMT_Change_Me",
+            "Effect": "Deny",
+            "Principal": "*",
+            "Action": [
+                "s3:ListBucket",
+                "s3:GetObject"
+            ],
+            "Resource": [
+                "arn:aws:s3:::s3-accesslog-region-frankfurt/*",
+                "arn:aws:s3:::s3-accesslog-region-frankfurt"
+            ],
+            "Condition": {
+                "StringNotEqualsIfExists": {
+                    "aws:PrincipalAccount": "054676820928",
+                    "aws:PrincipalServiceName": [
+                        "cloudtrail.amazonaws.com",
+                        "config.amazonaws.com"
+                    ]
+                },
+                "NotIpAddress": {
+                    "aws:SourceIp": [
+                        "211.115.223.215/32",
+                        "203.244.218.40/32",
+                        "210.94.41.89/32",
+                        "203.244.218.41/32",
+                        "18.185.161.202/32"
+                    ]
+                },
+                "StringNotEquals": {
+                    "aws:SourceVpce": "vpce-0c4e2de1ecde3d393"
+                }
+            }
+        }
+    ]
+}
+
+
+02:45
+vpce-0c4e2de1ecde3d393
