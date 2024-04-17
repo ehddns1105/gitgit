@@ -7,7 +7,8 @@ SSH VPN 접속 방법
 -Putty 를 이용한 SSH Tunneling 은 반드시 SSH Tunneling 용도 서버에 접속 한 상태에서만 터널링 가능
 
 ```
-![](2024-04-17-13-43-50.png)
+
+![](img/i19g.png)
 
 
 
@@ -17,15 +18,13 @@ ex) AWS 내에 같은 VPC 안에 있는 EC2 리눅스 서버 SSH 접속 후 RDS(
 
 1. **`SSH 접속 서버 IP 입력 후 원격 포트 입력`**
 
-![](2024-04-17-13-44-51.png)
+![](img/i32g.png)
 
 **`2. ppk 파일 적용`**
 Connection -> SSH -> Auth -> Authentication parameters에
 Private Key file for authentication 에 변환한 ppk 파일 적용`
 
-![](2024-04-17-13-45-15.png)
-
-
+![](img/i35g.png)
 
 
 
@@ -36,7 +35,7 @@ Destination : ip:port 입력 후 Add
 ex) AWS mysql 인 경우
 yds001.cq7iavl3dsuu.ap-northeast-2.rds.amazonaws.com:1433
 
-![](2024-04-17-13-47-01.png)
+![](img/i29g.png)
 
 
 
@@ -46,5 +45,4 @@ netstat -ano | findstr "해당포트"`
 `**5. 로컬 PC 에서 해당 포트로 접속 확인**
 ex) 127.0.0.1,1433`
 
-
-![](2024-04-17-13-47-43.png)
+![](img/i36g.png)
