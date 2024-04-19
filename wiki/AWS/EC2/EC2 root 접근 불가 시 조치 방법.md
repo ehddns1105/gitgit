@@ -61,3 +61,17 @@ Device       Start      End  Sectors  Size Type \
 /dev/xvdf1     ext4     7.6G  1.5G  6.1G  20% /test_ori
 마운트가 완료 되었습니다.
 
+
+````
+chroot /test_ori
+로 접속 하여
+root 패스워드 설정 및 변경
+
+
+그 후 exit 로 원래 환경으로 돌아온 뒤
+umount /test_ori
+
+AWS 콘솔 상에서도 기존 Ec2 에 볼륨 장착
+부팅 후 확인
+````
+
